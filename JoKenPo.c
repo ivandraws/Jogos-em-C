@@ -33,6 +33,7 @@ int main(void)
     
     if (result(jogadas[compChoice], player) == -1)
         printf("Something went wrong\n");
+        return 1;
     free(player);
     return 0;
 }
