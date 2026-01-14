@@ -25,7 +25,7 @@ int main(void)
     if (result(jogadas[compChoice], player) == 1)
         printf("Player veceu!\n");
     if (result(jogadas[compChoice], player) == 2)
-        printf("Comp venceu!");
+        printf("Comp venceu!\n");
 
     if (result(jogadas[compChoice], player) == -1)
         printf("Soething went wrong\n");
