@@ -23,12 +23,16 @@ int main(void)
     } while (result(jogadas[compChoice], player) == 0);
 
     if (result(jogadas[compChoice], player) == 1)
+    {
         printf("Player veceu!\n");
-    if (result(jogadas[compChoice], player) == 2)
+    }
+    else if (result(jogadas[compChoice], player) == 2)
+    {    
         printf("Comp venceu!\n");
-
+    }   
+    
     if (result(jogadas[compChoice], player) == -1)
-        printf("Soething went wrong\n");
+        printf("Something went wrong\n");
     free(player);
     return 0;
 }
