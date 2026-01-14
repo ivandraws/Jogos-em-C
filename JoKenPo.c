@@ -22,6 +22,11 @@ int main(void)
         scanf("%s", player);
     } while (result(jogadas[compChoice], player) == 0);
 
+    if (result(jogadas[compChoice], player) == 1)
+        printf("Player veceu!\n");
+    if (result(jogadas[compChoice], player) == 2)
+        printf("Comp venceu!");
+
     if (result(jogadas[compChoice], player) == -1)
         printf("Soething went wrong\n");
     free(player);
