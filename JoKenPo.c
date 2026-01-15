@@ -9,32 +9,29 @@ int main(void)
 {
     srand(time(NULL));
     char *jogadas[] = {"Pedra", "Papel", "Tesoura"};
-    char *player = malloc(sizeof(float) * 4);
     int compChoice;
+    int count[3] = {0, 0, 0}; // Counter for Pedra, Papel, Tesoura
+    int iterations = 100;
 
-    printf("%s\n", jogadas[0]);
-    printf("%s\n", jogadas[1]);
-    printf("%s\n", jogadas[2]);
-   do
+    printf("Executando %d iteracoes para obter estatisticas das escolhas do computador...\n\n", iterations);
+
+    // Run 100 times and collect statistics
+    for (int i = 0; i < iterations; i++)
     {
         compChoice = rand() % 3;
-        printf("Player, escolha sua jogada: ");
-        scanf("%s", player);
-    } while (result(jogadas[compChoice], player) == 0);
-
-    if (result(jogadas[compChoice], player) == 1)
-    {
-        printf("Player veceu!\n");
+        count[compChoice]++;
     }
-    else if (result(jogadas[compChoice], player) == 2)
-    {    
-        printf("Comp venceu!\n");
-    }   
+
+    // Display results
+    printf("Resultados apos %d iteracoes:\n", iterations);
+    printf("======================================\n");
+    for (int i = 0; i < 3; i++)
+    {
+        double percentage = (count[i] * 100.0) / iterations;
+        printf("%s: %d vezes (%.2f%%)\n", jogadas[i], count[i], percentage);
+    }
+    printf("======================================\n");
     
-    if (result(jogadas[compChoice], player) == -1)
-        printf("Something went wrong\n");
-        return 1;
-    free(player);
     return 0;
 }
 
