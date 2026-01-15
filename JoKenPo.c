@@ -1,9 +1,6 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 #include <time.h>
-
-int result(char *comp, char *player);
 
 int main(void)
 {
@@ -33,27 +30,4 @@ int main(void)
     printf("======================================\n");
     
     return 0;
-}
-
-int result(char *comp, char *player)
-{
-    if (strcmp(comp, player) == 0)
-    {
-        printf("Its a TIE!\n");
-        return 0;
-    }
-    else
-    {
-        if ((strcmp(player, "Pedra") == 0 && strcmp(comp, "Tesoura") == 0) || (strcmp(player, "Papel") == 0 && strcmp(comp, "Pedra") == 0) || (strcmp(player, "Tesoura") == 0 && strcmp(comp, "Papel") == 0))
-        {
-            return 1;
-        }
-        
-        if ((strcmp(comp, "Pedra") == 0 && strcmp(player, "Tesoura") == 0)  || ((strcmp(comp, "Papel") == 0) && strcmp(player, "Pedra") == 0) || (strcmp(comp, "Tesoura") == 0 && strcmp(player, "Papel") == 0))
-        {
-            return 2;
-        }
-    }
-    
-    return -1;
 }
